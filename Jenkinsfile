@@ -6,12 +6,14 @@ node {
     }
 
     stage('Build image'){
-        app = docker.build("javatest/test")
+        app = docker.build("javatest")
     }
 
-    stage('Test Image'){
+    stage('Run Image'){
+        docker.image('javatest:latest').inside {
+            sh 'java Hello'
+        }
 
-        sh 'echo "Image Created"'
     }
 
 
