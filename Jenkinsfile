@@ -11,6 +11,8 @@ node {
 
     stage('Run Image'){
         docker.image('javatest:latest').inside {
+            sh 'pwd'
+            sh 'javac Hello.java'
             sh 'java Hello'
         }
 
