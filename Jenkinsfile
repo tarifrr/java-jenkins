@@ -15,6 +15,9 @@ node {
             sh 'javac Hello.java'
             sh 'java Hello'
         }
+    stage('See Docker Images'){
+        sh 'docker images'
+    }
 
     }
 
